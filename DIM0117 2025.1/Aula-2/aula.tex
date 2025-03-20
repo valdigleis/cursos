@@ -5,7 +5,8 @@
 % versao 1.1								 %
 % Atualizado em 14/05/2016					 %
 %--------------------------------------------%
-\documentclass[handout,t]{beamer}
+%\documentclass[handout,t]{beamer}
+\documentclass[presentation,t]{beamer}
 % Para alterar a linguagem do documento
 \usepackage[portuges]{babel}
 % Para aceitar caracteres especias deretamente do teclado
@@ -34,6 +35,8 @@
 \usepackage{ifthen}
 % Para colocar legendas em algo que nao e float
 \usepackage{capt-of}
+% Pacotes para escrever algoritmos em pseudocódigo
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
 % Para definir o tema do slide
 \usetheme{Berlin}
 % Para difinir cores e background
@@ -42,7 +45,7 @@
 \setbeamertemplate{caption}[numbered]
 
 % Título
-\title[DIM0117]{Introdução à Programação Orientada a Objetos}
+\title[DIM0117]{Estruturas de Dados Básicas II}
 % Data
 \date{\today}
 % Autores
@@ -76,25 +79,13 @@
 	\tableofcontents
 \end{frame}
 
-% Introducao
-\include{tex/introducao/introducao}
+% seções
+\include{tex/secao1}
+\include{tex/secao2}
+\include{tex/secao3}
 
-% Metodologia
-\include{tex/metodologia/metodologia}
-
-% Resultados
-\include{tex/resultados/resultados}
-
-% Conclusao
-\include{tex/conclusao/conclusao}
-
-% Referencias
-\include{tex/referencias/referencias}
-
-% Agradecimentos
-\section{}
-\begin{frame}{Agradecimentos}
-	Agradeço a todos. 	
+\begin{frame}{Referências}
+  \bibliography{referencias}
 \end{frame}
 
 \end{document}

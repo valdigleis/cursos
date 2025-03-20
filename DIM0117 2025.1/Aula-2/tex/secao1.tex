@@ -1,0 +1,54 @@
+\section{Sucessão por recorrência}
+
+\begin{frame}{Sucessão e Recorrência}
+  \begin{itemize}
+    \item É sabido que diversos problemas em ciências da computação são solucionáveis através do uso de listas ou sequências.
+    \item É possível definir uma sequência usando recorrência (recursão)?\pause \ \textbf{SIM}. . .\pause \ {\color{red} como}?
+  \end{itemize}
+  \pause
+  A definição de uma sequência $u: \mathbb{N} \rightarrow A$ usando recorrência consiste em uma tarefa de duas partes, a saber:
+  \begin{itemize}
+    \item Apresentar explicitamente qual(quais) é(são) o(s) elemento(s) inicial(iniciais) $u_0$ da sequência, ou seja, apresentar o elemento 
+    na base da recorrência (condição inicial).\pause
+    \item Indicar como se pode obter cada um dos termos da sequência a custa do(s) termo(s) anterior(es).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplos}
+  \begin{itemize}
+    \item[(a)] Defina a sequência de naturais múltiplos de 5.
+    \pause
+    \begin{eqnarray*}
+      u_0 & = & 0\\ \pause
+      u_{n + 1} & = & 5 + u_{n} \ [\forall n \in \mathbb{N}]
+    \end{eqnarray*}
+    \pause
+    \item[(b)] A sequência de Lucas é definida como:
+    \pause
+    \begin{eqnarray*}
+      u_1 & = & 2\\ \pause
+      u_2 & = & 1\\ \pause
+      u_{n + 1} & = & u_{n} + u_{n - 1} \ [\forall n \in \mathbb{N}, n \geq 2]
+    \end{eqnarray*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Prática}
+  \begin{itemize}
+    \item {\color{red}Desafio}: Construa a sequência de Collatz usando recorrência.
+    \item A sequência inicia com um $n \in \mathbb{N} - \{0\}$, os próximos valores da sequência são obtidos da seguinte forma: se o número 
+    atual é par o próximo será sua metade, se o número atual é impar então o próximo é 3 vezes o atual adicionado de 1.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Questões Importantes}
+  \begin{itemize}
+    \item[(a)] \cite{carmo2013} Sempre que $V$ é um conjunto e $T: V \rightarrow V$ é uma função total. Para cada $a \in V$, existe uma única sequência 
+    $u: \mathbb{N} \rightarrow V$ que satisfaz as condições:
+    \begin{eqnarray*}
+      u_0 & = & a\\
+      u_{n + 1} & = & T(u_{n}) \ \ [\forall n \in \mathbb{N}]
+    \end{eqnarray*}
+    \item[(b)] Qual a problemática da definição de sequências por recorrência?
+  \end{itemize}
+\end{frame}

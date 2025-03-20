@@ -44,6 +44,11 @@ if [ -f "$FILENAME.snm" ]; then
   rm -r "$FILENAME.snm"
 fi
 
+if [ -f "$FILENAME.nav" ]; then
+  rm -r "$FILENAME.nav"
+fi
+
+
 # Comandos para compilar usadno lualatex e bibtex
 lualatex "$FILENAME.tex"
 bibtex "$FILENAME.aux"
@@ -51,7 +56,8 @@ lualatex "$FILENAME.tex"
 lualatex "$FILENAME.tex"
 
 # Limpeza de arquivos intermediários (ação obrigatória para deixar o diretório "limpo")
-rm -r "$FILENAME.aux" "$FILENAME.bbl" "$FILENAME.blg" "$FILENAME.lof" "$FILENAME.log" "$FILENAME.out" "$FILENAME.toc" "$FILENAME.snm"
+rm -r "$FILENAME.aux" "$FILENAME.bbl" "$FILENAME.blg" "$FILENAME.lof" "$FILENAME.log" "$FILENAME.out" "$FILENAME.toc" "$FILENAME.snm" "$FILENAME.nav"
+
 
 # Limpando subdiretórios
 find . -type f -name "*.aux" -exec rm -f {} +

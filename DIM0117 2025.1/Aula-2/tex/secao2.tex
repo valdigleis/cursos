@@ -1,0 +1,103 @@
+\section{Métodos de resoluções de recorrências}
+
+\begin{frame}{Método interativo}
+  \textbf{Método iterativo} é uma técnica para resolver relações de recorrência, onde expandimos a recorrência passo a passo, substituindo os termos anteriores até encontrar um padrão ou uma fórmula fechada. Podemos pensar em tal método através do seguinte ``algoritmo''.
+  \begin{enumerate}
+    \item Expandir os primeiros termos aplicando a recorrência repetidamente.
+    \item Identificar um padrão para expressar $u_n$ em função de $u_0$ ou outro(s) termo(s) da base.
+    \item Generalizar a expressão para um caso qualquer $n$. . . ou seja, prove por indução!
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Exemplo 01}
+  Considerando a recorrência $u_1 = 1$ e $u_{n} = 2 + u_{n - 1}$, sua resolução por método interativo é dada por:
+  \begin{itemize}
+    \pause
+    \item Passo 1: Expandir os primeiros termos aplicando a recorrência repetidamente.
+    \begin{eqnarray*}
+      u_{2} & = & 2 + u_1 = 2 + 1 = 3\\
+      u_{3} & = & 2 + u_2 = 2 + 3 = 5\\
+      u_{4} & = & 2 + u_3 = 2 + 5 = 7\\
+      u_{5} & = & 2 + u_4 = 2 + 7 = 9\\
+    \end{eqnarray*}
+    \item Passo 2: Identificar o padrão, aqui é $u_n = 2n - 1$.
+    \item Passo 3: Generalizar a expressão para um caso qualquer $n$... vamos lá!!!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item \textbf{Base}:  Note trivialmente que $u_1 = 1 = 2\cdot 1 - 1$.
+    \item \textbf{Hipotese indutiva}:  Suponha que $u_n = 2n - 1$.
+    \item \textbf{Passo indutivo}: Observe que:
+    \begin{eqnarray*}
+      u_{n+1} & = & 2 + u_{n}\\
+      & = & 2 + 2n - 1\\
+      & = & 2(n + 1) - 1
+    \end{eqnarray*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Dica de ouro!!!}
+  O método interativo é particularmente bem-sucedido sempre que a recorrência atende a seguinte forma:
+  \begin{eqnarray*}
+    u_0 & = & b_0\\
+    u_n & = & a_n u_{n-1} + b_n
+  \end{eqnarray*}
+  quando $a_n$ e $b_n$ são constantes ou expressões envolvendo apenas $n$, não envolvendo qualquer termo da sequência.
+\end{frame}
+
+\begin{frame}{Método cancelamento}
+  \textbf{Método cancelamento} é uma técnica que é uma variação do método interativo, ela consiste em resolver a recorrência como uma soma que se "cancela" parcialmente ao expandir os termos. Podemos pensar em tal método através do seguinte ``algoritmo''.
+  \begin{enumerate}
+    \item Expresse a recorrência de forma que envolva uma diferença ou soma de termos.
+    \item Escreva a soma com os termos anteriores e observe como os termos intermediários se cancelam.
+    \item Após o cancelamento, resta uma expressão simples que pode ser resolvida para determinar $u_n$.
+    \item Generalizar para fórmula fechada.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Exemplo 02}
+  Considerando a recorrência $u_0 = 5$ e $u_{n} = 5 + u_{n - 1}$, sua resolução pelo método do cancelamento é dado por:
+  \pause
+  \begin{itemize}
+    \item Passo 1: expressando a recorrência como uma diferença de termos, tem-se $u_n - u_{n-1} = 5$.
+    \item Passo 2: note que,
+    $$(u_n - u_{n-1}) + (u_{n-1} - u_{n-2})  = 5 + 5$$
+    $$(u_n - u_{n-1}) + (u_{n-1} - u_{n-2}) + (u_{n-2} - u_{n-3})   = 5 + 5 + 5$$
+    $$\vdots$$
+    $$(u_n - u_{n-1}) + (u_{n-1} - u_{n-2}) + (u_{n-2} - u_{n-3}) + \cdots + (u_1 - u_0) =  5n$$
+    $$u_n - u_0  =  5n$$\pause
+    \item Passo 3: Determine $u_n$, observe que $u_n = u_0 + 5n  =  0 + 5n = 5n$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo 03}
+  Considerando a recorrência $u_1 = 1$ e $u_{n} = 2u_{n - 1} + 3$, sua resolução pelo método do cancelamento é dado por:
+  \pause
+  \begin{itemize}
+    \item Passo 1: Faça $u_n - 2u_{n - 1} = 3$, agora dividindo ambos os lados por $2^n$ tem-se $\frac{u_n}{2^n}- \frac{2u_{n - 1}}{2^n} = \frac{3}{2^n}$, logo $\frac{u_n}{2^n}- \frac{u_{n - 1}}{2^{n-1}} = \frac{3}{2^n}$.
+    \item Passo 2: note que,\pause
+    $$(\frac{u_n}{2^n} - \frac{u_{n - 1}}{2^{n-1}}) + (\frac{u_{n - 1}}{2^{n-1}} - \frac{u_{n - 2}}{2^{n-2}})  = \frac{3}{2^n} + \frac{3}{2^{n-1}}$$\pause
+    $$\vdots$$
+    $$(\frac{u_n}{2^n} - \frac{u_{n - 1}}{2^{n-1}}) + (\frac{u_{n - 1}}{2^{n-1}} - \frac{u_{n - 2}}{2^{n-2}}) + \cdots + (\frac{u_2}{2^2} + \frac{u_1}{2^1}) = \sum_{k = 2}^{n}\frac{3}{2^k}$$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo 03 - Continuação}
+  $$\frac{u_n}{2^n} - \frac{u_1}{2^1} = 3 \sum_{k = 2}^{n}\frac{1}{2^k}$$\pause
+  Assim, 
+  $$\frac{u_n}{2^n} = 2 - \frac{3}{2^n} = 2^{n+1} - 3$$\pause
+  Agora observe que $u_n = 2^{n+1} - 3$. E por fim, basta generalizar.
+\end{frame}
+
+
+\begin{frame}{Método cancelamento}
+  \textbf{Método cancelamento} é uma técnica que é uma variação do método interativo, ela consiste em resolver a recorrência como uma soma que se "cancela" parcialmente ao expandir os termos. Podemos pensar em tal método através do seguinte ``algoritmo''.
+  \begin{enumerate}
+    \item Expresse a recorrência de forma que envolva uma diferença ou soma de termos.
+    \item Escreva a soma com os termos anteriores e observe como os termos intermediários se cancelam.
+    \item Após o cancelamento, resta uma expressão simples que pode ser resolvida para determinar $u_n$.
+    \item Generalizar para fórmula fechada.
+  \end{enumerate}
+\end{frame}
