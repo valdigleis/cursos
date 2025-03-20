@@ -1,0 +1,40 @@
+\section{Um pouco do ecossistema Java}
+
+\begin{frame}{Quais os componentes do Java}
+  \begin{itemize}
+    \item JVM (Java Virtual Machine), um computador virtual, que interpreta e executa bytecode Java.
+    \item Compilador (javac): Converte código-fonte Java em bytecode.
+    \item Ferramentas de desenvolvimento, como javadoc, javap e depuradores.
+    \item As bibliotecas padrão, como java.lang, java.util, java.io, etc.
+  \end{itemize}
+  \pause 
+  A critério de curiosidade:
+  \begin{itemize}
+    \item O JRE  (Java Runtime Environment) é formado por JVM, Bibliotecas padrão e arquivos de configuração.
+    \item O JDK  (Java Development Kit) é formado por javac, as Ferramentas de desenvolvimento e o JRE.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Sobre a JVM}
+  A JVM é a máquina virtual que executa bytecode, de maneira independente do sistema operacional, nesse sentido o bytecode é o binário da JVM. Além disso, a JVM possui:
+  \begin{itemize}
+    \item Class Loader: mecanismo para carrega classes na memória.
+    \item JIT Compiler (Just-In-Time): Compila partes do código para código nativo em tempo de execução, otimizando o desempenho.
+    \item Garbage Collector (GC):  Gerencia a memória automaticamente, liberando objetos não utilizados.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{API's e Bibliotecas padrão}
+  Java oferece um conjunto robusto de bibliotecas padrão, incluindo:
+  \begin{itemize}
+    \item Java SE (Standard Edition): Inclui coleções, manipulação de arquivos, threads, etc.
+    \item Java EE (chamado Jakarta EE): Frameworks para aplicações corporativas (JPA, Servlets, EJB, etc.).
+    \item Java ME (Micro Edition): Para dispositivos embarcados e móveis.
+  \end{itemize}
+  Sobre API's vale a menção a seguintes:
+  \begin{itemize}
+    \item Spring: framework para aplicações empresariais, baseada na arquitetura MVC.
+    \item Hibernate: framework ORM (Object-Relational Mapping) para banco de dados.
+    \item Maven/Gradle: framework para automação e gerenciamento de dependências.
+  \end{itemize}
+\end{frame}

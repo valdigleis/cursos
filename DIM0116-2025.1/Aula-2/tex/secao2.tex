@@ -1,0 +1,47 @@
+\section{Os quatro pilares de OO}
+
+\begin{frame}{Os pilares}
+  \begin{itemize}
+    \item Abstração: são as classes propriamente ditas, elas são definidas em termos de código e são fundamentais pois define os objetos no sistema.\pause
+    \item Encapsulamento: refere-se à prática de restringir o acesso direto aos atributos e métodos internos de um objeto, permitindo o controle desse acesso por meio de métodos específicos.\pause
+    \item Herança: permite a criação de novas classes a partir de classes existentes, reutilizando atributos e métodos. Isso promove a reutilização de código e facilita a manutenção.\pause
+    \item Polimorfismo: permite que os métodos tenham comportamentos diferentes dependendo do objeto que os invoca ou do contexto em que são utilizados.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Sobre o Encapsulamento}
+  O Encapsulamento tem por objetivos:
+  \begin{itemize}
+    \item Proteção dos dados, ou seja, vita modificações acidentais ou indevidas do estado dos objetos.
+    \item Esconder a implementação, o usuário da classe interage apenas com a interface ``pública'', sem precisar conhecer os detalhes internos.
+    \item Facilitar a manutenção, isto é, alterações na implementação não devem afetar quem usa a classe.
+  \end{itemize}
+  \pause
+  E quais o níveis de proteção dos dados?\pause O níveis são: privado, protegido e público.
+\end{frame}
+
+\begin{frame}{Sobre Herança}
+  As heranças podem ser
+  \begin{itemize}
+    \item Herança Simples: Uma subclasse herda de uma única superclasse. (Java e PHP seguem esse modelo).
+    \item Herança Múltipla: Uma classe herda de múltiplas classes (existe em Python, C++, mas não existe em Java).
+    \item Herança Multinível (encadeada): Uma classe herda de outra que já herdou de uma terceira.
+    \item Herança Hierárquica: Uma superclasse tem várias subclasses.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Sobre Polimorfismo}
+  O Polimorfismo tem por objetos:
+  \begin{itemize}
+    \item Flexibilidade: Permite que um mesmo método ou interface seja usado para diferentes tipos de objetos.
+    \item Extensibilidade: Facilita a adição de novos tipos de objetos sem modificar o código existente.
+    \item Abstração: Permite trabalhar com objetos de forma genérica, sem precisar conhecer seus tipos específicos.
+  \end{itemize}
+  \pause
+  Como o polimorfismo é implementado?\pause
+  \begin{itemize}
+    \item Sobrescrita de métodos (override): Uma classe filha redefine um método da classe pai.
+    \item Sobrecarga de métodos (overload): vários métodos com o mesmo nome, mas com parâmetros diferentes.
+    \item Interfaces e classes abstratas, definem métodos que devem ser implementados pelas classes filhas.
+  \end{itemize}
+\end{frame}
